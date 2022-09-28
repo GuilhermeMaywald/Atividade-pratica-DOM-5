@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Atividade DOM 5</title>
+</head>
+
+<body>
+    <main>
+        <section class="formulary">
+            <div>
+                <h1>Cadastro cliente</h1>
+            </div>
+            <form action="#">
+                <div class="form-fields">
+                    <label for="name-client">Nome</label>
+                    <input type="text" id="name-client" placeholder="Digite seu nome">
+                    <label for="email-client">E-mail</label>
+                    <input type="email" id="email-client" placeholder="Digite seu email">
+                    <label for="phone-client">Telefone</label>
+                    <input type="text" id="phone-client" placeholder="Digite seu telefone">
+                    <button type="button" id="btn-save">Salvar</button>
+                    <button type="button" id="btn-conclude">Concluir</button>
+                </div>
+            </form>
+            <div id="message" hidden>
+                <h1>Clientes cadastrados</h1>
+                <ul id="registered"></ul>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="/assets/js/dom_5.js"></script>
+
+</html>
