@@ -58,8 +58,8 @@ function displayList(element, key) {
 }
 
 function completeRegistration() {
-    let registrationCompleted = document.getElementsByClassName('formulary');
-    let listCompleted = document.getElementsByClassName('message-registration');
+    let registrationCompleted = document.getElementById('formulary');
+    let listCompleted = document.getElementById('message-registration');
 
     registrationCompleted.setAttribute('class', 'inactive');
     listCompleted.setAttribute('class', 'active');
