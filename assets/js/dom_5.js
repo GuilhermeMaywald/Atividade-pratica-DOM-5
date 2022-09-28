@@ -1,6 +1,7 @@
 /*
 Desenvolva uma página HTML com um formulário conforme modelo (de baixa fidelidade) abaixo:
-a. Após clicar no botão Salvar inclua esse valor em um array, matriz ou objeto, escolha o que achar mais adequado. Atenção! Valide se está preenchido para não salvar valores vazios. 
+a. Após clicar no botão Salvar inclua esse valor em um array, matriz ou objeto, escolha o que achar mais adequado. 
+Atenção! Valide se está preenchido para não salvar valores vazios. 
 b. Quando o usuário clicar no botão Concluir você deverá esconder o formulário e exibir o que está salvo em seu objeto JS.
 Dicas:
 ● Usem o que vocês aprenderam até aqui de forma inteligente.
@@ -8,13 +9,14 @@ Dicas:
 ● Utilizem addEventListener para capturar os eventos. 
 */
 
-let btnPressSave = document.getElementById('btn_save');
-let btnPressConclude = document.getElementById('btn_conclude');
 let receiveName = document.getElementById('name-client');
 let receiveEmail = document.getElementById('email-client');
 let receivePhone = document.getElementById('phone-client');
 let messageClient = document.getElementById('message');
 let listClient = document.getElementById('registered');
+let btnPressSave = document.getElementById('btn_save');
+let btnPressConclude = document.getElementById('btn_conclude');
+let arrFields = [];
 
 let validateFields = (field) => {
     if (field != '') {
@@ -23,12 +25,30 @@ let validateFields = (field) => {
     return false;
 }
 
+let cleanFormulary = () => {
+    receiveName.value = '';
+    receiveEmail.value = '';
+    receivePhone.value = '';
+}
+
 let validateMessage = (message) => {
     messageClient.innerHTML = message;
     messageClient.removeAttribute('hidden');
 }
 
-function nameReceived(){
-    document.getElementById('name-client').innerHTML = 'FUNCIONOU';
+function receivedFields(){
+    let valueName = receiveName.value;  
+    let valueEmail = receiveEmail.value;
+    let valuePhone = receivePhone.value;
+    let fields = {
+        name: valueName,
+        email: valueEmail,
+        telephone: valuePhone
+    }
+    validateFields();
+    arrFields.push(fields);
+    cleanFormulary();
+    console.log(arrFields);
 }
-btnPressSave.addEventListener('click', nameReceived);
+
+btnPressSave.addEventListener("click", receivedFields);
