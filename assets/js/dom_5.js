@@ -52,6 +52,14 @@ function receivedFields(){
 }
 
 function displayList(element, key) {
+    let list = 
+    `<ul id="registered">Cliente</ul>
+    <li>${element.name}</li>
+    <li>${element.email}</li>
+    <li>${element.telephone}</li>`;
+
+    let tBodyElement = document.getElementById('registered');
+    tBodyElement.innerHTML += list;
     console.log(key, element.name);
     console.log(key, element.email);
     console.log(key, element.telephone);
